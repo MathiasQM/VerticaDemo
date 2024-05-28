@@ -1,6 +1,6 @@
 
 # Live Demo:
-[Live Demo]([[https://nuxt.com/docs/getting-started/introduction](https://auth.brandbrainai.com/)])
+[Live Demo](https://auth.brandbrainai.com/)
 
 
 # Nuxt 3 Minimal Starter

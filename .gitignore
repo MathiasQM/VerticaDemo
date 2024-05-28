@@ -1,0 +1,55 @@
+# Firebase configuration files
+.firebase/
+.firebase.json
+.firebaserc
+firebase.indexes.json
+
+# Nuxt.js build and output directories
+.nuxt/
+functions/.nuxt/
+functions/.output/
+.output/
+.data/
+.nitro/
+.cache/
+dist/
+
+# Node.js dependencies and generated files
+node_modules/
+functions/node_modules/
+functions/package-lock.json
+functions/yarn.lock
+
+# Build and log files
+dist/
+build/
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+functions/.env
+
+# Service account credentials
+functions/src/service-account.json
+functions/lib/service-account.json
+service-account.json
+
+# Miscellaneous
+.DS_Store
+.fleet/
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore all in functions/.lib except .gitignore
+functions/.lib/*
+!functions/.lib/.gitignore
+
+# Local env files
+.env
+.env.*
+!.env.example

@@ -161,7 +161,7 @@ const handleRegistration = async () => {
     const generateRegistrationOptions = httpsCallable<GenerateRegistrationAndAuthOptionsInput, GenerateRegistrationOptionsResult>(functions, "generateRegistrationOptions");
     const result = await generateRegistrationOptions({
       email: email.value,
-      rpId: "brandbrainai.com",
+      rpId: window.location.hostname,
     });
     const options = result.data;
 
@@ -228,7 +228,7 @@ const handleAuthentication = async () => {
     const generateAuthenticationOptions = httpsCallable<GenerateRegistrationAndAuthOptionsInput, GenerateAuthenticationOptionsResult>(functions, "generateAuthenticationOptions");
     const result = await generateAuthenticationOptions({
       email: email.value,
-      rpId: "brandbrainai.com",
+      rpId: window.location.hostname,
     });
 
     const options = result.data;
@@ -369,6 +369,7 @@ const handleSubmit = async (): Promise<void> => {
   message.value = "";
   try {
     const { emailExists, authMethods } = await checkIfEmailExists(email.value);
+    console.log("Email exists:", emailExists, "Auth methods:", authMethods);
 
     if (emailExists) {
       await handleExistingUser(authMethods);

@@ -15,12 +15,12 @@ interface FirebaseConfig {
 export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
   // Firebase configuration
   const firebaseConfig: FirebaseConfig = {
-    apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY || "",
-    authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "",
-    projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID || "",
-    storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "",
-    messagingSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "",
-    appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID || "",
+    apiKey: "AIzaSyBxEGaO7Yw-1A89KO1DAn79vDMuAwoT-Aw",
+    authDomain: "webauthndemo-d542b.firebaseapp.com",
+    projectId: "webauthndemo-d542b",
+    storageBucket: "webauthndemo-d542b.appspot.com",
+    messagingSenderId: "367123721940",
+    appId: "1:367123721940:web:5deecff69243cc2fa85541",
   };
 
   let app: FirebaseApp;

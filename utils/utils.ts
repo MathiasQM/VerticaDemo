@@ -1,21 +1,12 @@
 import { getAuth, signInWithCustomToken } from "firebase/auth";
-import {
-  collection,
-  getFirestore,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
 // Utility functions
 
 // Convert ArrayBuffer to Base64 URL-safe string
 export const bufferToBase64Url = (buffer: ArrayBuffer): string => {
   const binary = String.fromCharCode(...new Uint8Array(buffer));
-  return btoa(binary)
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 };
 
 // Convert Base64 URL-safe string to ArrayBuffer
@@ -32,7 +23,7 @@ export const base64urlToArrayBuffer = (base64url: string): ArrayBuffer => {
 
 // Set session cookie
 export const setSessionCookie = async (idToken: string): Promise<void> => {
-  const response = await fetch("https://auth.brandbrainai.com/setAuthCookie", {
+  const response = await fetch("https://vertica.mathiasqm.dk/setAuthCookie", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -47,9 +38,7 @@ export const setSessionCookie = async (idToken: string): Promise<void> => {
 };
 
 // Sign in with custom token and get ID token
-export const signInWithCustomTokenAndGetIdToken = async (
-  customToken: string
-): Promise<string> => {
+export const signInWithCustomTokenAndGetIdToken = async (customToken: string): Promise<string> => {
   const auth = getAuth();
   try {
     const userCredential = await signInWithCustomToken(auth, customToken);
@@ -62,9 +51,7 @@ export const signInWithCustomTokenAndGetIdToken = async (
 };
 
 // Check if email exists in Firestore
-export const checkIfEmailExists = async (
-  email: string
-): Promise<{ emailExists: boolean; authMethods: string[] }> => {
+export const checkIfEmailExists = async (email: string): Promise<{ emailExists: boolean; authMethods: string[] }> => {
   const db = getFirestore();
   const usersCollection = collection(db, "Users");
   const q = query(usersCollection, where("email", "==", email));

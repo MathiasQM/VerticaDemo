@@ -1,6 +1,8 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import type { FirebaseApp } from "firebase/app";
 import { defineNuxtPlugin } from "#app";
+// @ts-ignore
+import { useRuntimeConfig } from "#imports";
 import type { NuxtApp } from "#app";
 
 interface FirebaseConfig {
@@ -13,14 +15,17 @@ interface FirebaseConfig {
 }
 
 export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
+  const config = useRuntimeConfig();
+  console.log("Runtime config", config);
+
   // Firebase configuration
   const firebaseConfig: FirebaseConfig = {
-    apiKey: "AIzaSyBxEGaO7Yw-1A89KO1DAn79vDMuAwoT-Aw",
-    authDomain: "webauthndemo-d542b.firebaseapp.com",
-    projectId: "webauthndemo-d542b",
-    storageBucket: "webauthndemo-d542b.appspot.com",
-    messagingSenderId: "367123721940",
-    appId: "1:367123721940:web:5deecff69243cc2fa85541",
+    apiKey: config.apiKey,
+    authDomain: config.authDomain,
+    projectId: config.projectId,
+    storageBucket: config.storageBucket,
+    messagingSenderId: config.messagingSenderId,
+    appId: config.appId,
   };
 
   let app: FirebaseApp;

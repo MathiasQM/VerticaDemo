@@ -17,6 +17,14 @@
       }
     ]
   },
+  "environment": {
+    "API_KEY": "AIzaSyBxEGaO7Yw-1A89KO1DAn79vDMuAwoT-Aw",
+    "AUTH_DOMAIN": "webauthndemo-d542b.firebaseapp.com",
+    "PROJECT_ID": "webauthndemo-d542b",
+    "STORAGE_BUCKET": "webauthndemo-d542b.appspot.com",
+    "MESSAGING_SENDER_ID": "367123721940",
+    "APP_ID": "1:367123721940:web:5deecff69243cc2fa85541"
+  },
   "functions": [
     {
       "source": "functions",

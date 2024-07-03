@@ -16,7 +16,6 @@ interface FirebaseConfig {
 
 export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
   const config = useRuntimeConfig();
-  console.log("Runtime config", config);
 
   // Firebase configuration
   const firebaseConfig: FirebaseConfig = {

@@ -2,10 +2,10 @@
 # Vertica ansøgning Demo projekt:
 Dette er en MVP af en implementering af WebAutN som logind mulighed, med fallback til Email OTP, hvis WebAuthN ikke er understøttet af brugerens browser. Jeg har ikke optimeret løsningen for performance, vil der være en smule latency grundet coldstarts for Firebase Cloud Functions. I production er dette selvfølgelig noget jeg vill optimere. Ved successfuldt login sættes en "Session Cookie" ved navn __session, der er tilgængelig på alle subdomæner under paraplyen "mathiasqm.dk". Denne sessionCookie kan benyttes til at autnetificere brugere på tværs af subdomæner. Hverken autentificering og ugyldiggørelse af denne cookie er ikke implementeret i denne demo og cookien vil derfor stadig være tilstede ved logout 
 
-Jeg har forsøgt at genskabe [Vertica]([https://auth.brandbrainai.com/](https://www.vertica.dk/))'s brandidentitet i denne demo. Jeg har dog afholdt mig, fra at bruge Verticas' logo og font, for ikke at overtræde ophavsret.
+Jeg har forsøgt at genskabe [Vertica](https://www.vertica.dk/)'s brandidentitet i denne demo. Jeg har dog afholdt mig, fra at bruge Verticas' logo og font, for ikke at overtræde ophavsret.
 
 # Live Demo:
-[Live Demo](https://auth.brandbrainai.com/)
+[Live Demo](https://vertica.mathiasqm.dk)
 
 # Tech:
 
